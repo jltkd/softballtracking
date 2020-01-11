@@ -21,5 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('players', 'PlayerController');
 
-Route::get('/atbat/create', 'AtBatController@create');
-Route::post('/atbat/store', 'AtBatController@store');
+Route::resource('atbat', 'AtBatController');
+
+//Route::get('/atbat/create', 'AtBatController@create');
+//Route::post('/atbat/store', 'AtBatController@store');
+//Route::delete('/atbat/destroy', 'AtBatController@destroy');

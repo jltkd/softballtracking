@@ -10,15 +10,18 @@
                 </div>
             @endif
 
-            <div class="flex justify-content-end mb-5">
-                <a class="text-right bg-transparent hover:bg-blue-900 text-blue-900 hover:text-white py-2 px-4 border border-blue-900 hover:border-transparent rounded" href="/atbat/create?p={{ $player->id }}">New At Bat</a>
-            </div>
+            @auth
+                <div class="flex justify-content-end mb-5">
+                    <a class="text-right bg-transparent hover:bg-blue-900 text-blue-900 hover:text-white py-2 px-4 border border-blue-900 hover:border-transparent rounded" href="/atbat/create?p={{ $player->id }}">New At Bat</a>
+                </div>
+            @endauth
+
+                <div class="flex justify-content-end mb-5">
+                        <h1 class="font-semibold text-gray-700 text-lg">{{ $player->full_name }}</h1>
+                </div>
 
             @if(count($atbats))
                 <div class="flex justify-content-end mb-5">
-{{--                    <div class="w-1/3 p-3">--}}
-{{--                        {!! $atbatsChart->container() !!}--}}
-{{--                    </div>--}}
                     <div class="w-2/3">
                         {!! $hitsChart->container() !!}
                     </div>
@@ -32,7 +35,7 @@
             <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
 
                 <div class="font-semibold bg-gray-200 text-gray-700 py-3 px-6 mb-0">
-                    At Bat | {{ $player->full_name }}
+                    At Bat
                 </div>
 
                 <div class="w-full p-6">

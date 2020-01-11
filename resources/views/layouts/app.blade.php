@@ -26,10 +26,10 @@
                         </a>
                     </div>
                     <div class="flex-1 text-right">
+                        <a href="/players" class="no-underline hover:underline text-gray-300 text-sm p-3">Players</a>
                         @guest
                             <a class="no-underline hover:underline text-gray-300 text-sm p-3" href="{{ route('login') }}">{{ __('Login') }}</a>
                         @else
-                            <a href="/players" class="no-underline hover:underline text-gray-300 text-sm p-3">Players</a>
                             <span class="text-gray-300 text-sm pr-4">{{ Auth::user()->name }}</span>
 
                             <a href="{{ route('logout') }}"

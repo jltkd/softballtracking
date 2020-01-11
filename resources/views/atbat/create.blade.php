@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="w-full p-6">
-                    <form method="post" action="/atbat/store" class="w-full max-w-sm">
+                    <form method="post" action="{{ route('atbat.store') }}" class="w-full max-w-sm">
                         @csrf
                         <input name="player_id" type="hidden" value="{{ app('request')->input('p') }}">
                         <div class="md:flex md:items-center mb-6">

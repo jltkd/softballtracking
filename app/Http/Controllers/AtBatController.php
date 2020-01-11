@@ -89,8 +89,10 @@ class AtBatController extends Controller
      * @param  \App\AtBat  $atBat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AtBat $atBat)
+    public function destroy($id)
     {
-        //
+        $atbat = AtBat::findOrFail($id);
+        $atbat->delete();
+        return back();
     }
 }
