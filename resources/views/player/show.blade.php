@@ -37,28 +37,7 @@
 
                 <div class="w-full p-6">
                     @if(count($atbats))
-                        <table class="text-left w-full border-collapse">
-                            <thead>
-                            <tr>
-                                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Date</th>
-                                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Inning</th>
-                                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Balls</th>
-                                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Strikes</th>
-                                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Outcome</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($atbats as $atbat)
-                                <tr class="hover:bg-grey-lighter">
-                                    <td class="py-4 px-6 border-b border-grey-light">{{ Carbon\Carbon::parse($atbat->date)->format('m-d-Y') }}</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">{{ $atbat->inning }}</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">{{ $atbat->balls }}</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">{{ $atbat->strikes }}</td>
-                                    <td class="py-4 px-6 border-b border-grey-light">{{ $atbat->outcome }}</td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+                        @livewire('atbat-table')
                     @else
                         <p>No At Bats Created.</p>
                     @endif

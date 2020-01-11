@@ -13,6 +13,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8">
     </script>
+    @livewireAssets
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none">
     <div id="app">

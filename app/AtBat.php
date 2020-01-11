@@ -19,7 +19,9 @@ class AtBat extends Model
         return $this->belongsTo(Player::class);
     }
 
-    public function battingavg() {
-        return 'test';
+    public static function search($query)
+    {
+        return empty($query) ? static::query()
+            : static::where('outcome', 'like', '%'.$query.'%');
     }
 }
