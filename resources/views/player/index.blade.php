@@ -10,9 +10,11 @@
                 </div>
             @endif
 
+            @auth()
                 <div class="flex justify-content-end mb-5">
                     <a class="text-right bg-transparent hover:bg-blue-900 text-blue-900 hover:text-white py-2 px-4 border border-blue-900 hover:border-transparent rounded" href="/players/create">New Player</a>
                 </div>
+            @endauth
 
             <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
 

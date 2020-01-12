@@ -17,7 +17,7 @@
             @endauth
 
                 <div class="flex justify-content-end mb-5">
-                        <h1 class="font-semibold text-gray-700 text-lg">{{ $player->full_name }}</h1>
+                        <h1 class="font-semibold text-gray-700 text-5xl">{{ $player->full_name }}</h1>
                 </div>
 
             @if(count($atbats))

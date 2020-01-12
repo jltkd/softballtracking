@@ -15,6 +15,8 @@ class AtBat extends Model
       'outcome'
     ];
 
+    protected $casts = ['date' => 'date'];
+
     public function player() {
         return $this->belongsTo(Player::class);
     }

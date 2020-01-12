@@ -95,11 +95,6 @@ class PlayerController extends Controller
             "rgba(125, 190, 255, 0.7)",
         ];
 
-        $atbatsChart = new AtBatChart;
-        $atbatsChart->minimalist(false);
-        $atbatsChart->labels(['Strikes', 'Balls']);
-        $atbatsChart->dataset('Strikes vs. Balls', 'bar', [$strikes,$balls])->color($borderColors)->backgroundcolor($fillColors);
-
         $hitsChart = new HitChart;
         $hitsChart->minimalist(false);
         $hitsChart->labels(['Singles', 'Doubles', 'Triples', 'Home Runs', 'Walks', 'Strike Outs']);
@@ -107,7 +102,7 @@ class PlayerController extends Controller
             ->color($borderColors)
             ->backgroundcolor($fillColors);
 
-        return view('player.show', ['atbatsChart' => $atbatsChart, 'hitsChart' => $hitsChart], compact('player','atbats', 'batavg', 'atbat'));
+        return view('player.show', ['hitsChart' => $hitsChart], compact('player','atbats', 'batavg', 'atbat'));
     }
 
     /**
